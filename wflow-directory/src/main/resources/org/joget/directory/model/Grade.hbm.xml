@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class entity-name="Grade" name="org.joget.directory.model.Grade" table="dir_grade">
+        <id column="id" name="id" type="string"/>
+        <property name="dateCreated" type="timestamp"/>
+        <property name="dateModified" type="timestamp"/>
+        <property name="createdBy" type="string"/>
+        <property name="modifiedBy" type="string"/>
+        <property name="deleted" type="boolean"/>
+        <property column="name" name="name" type="string"/>
+        <property column="description" name="description" type="string"/>
+    <!-- join tables -->
+        <set name="employments">
+            <key column="gradeId"/>
+            <one-to-many entity-name="Employment"/>
+        </set>
+        <many-to-one column="organizationId" entity-name="Organization" name="organization"/>
+    </class>
+</hibernate-mapping>

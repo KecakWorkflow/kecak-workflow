@@ -1,0 +1,140 @@
+[{
+    title : '@@form.selectbox.editSelectBox@@',
+    properties : [{
+        name : 'id',
+        label : '@@form.selectbox.id@@',
+        type : 'textfield',
+        required : 'True',
+        regex_validation : '^[a-zA-Z0-9_]+$',
+        validation_message : '@@form.selectbox.invalidId@@'
+    },
+    {
+        name : 'label',
+        label : '@@form.selectbox.label@@',
+        type : 'textfield',
+        value : 'SelectBox'
+    },
+    {
+        name : 'options',
+        label : '@@form.selectbox.options@@',
+        type : 'grid',
+        columns : [{
+            key : 'value',
+            label : '@@form.selectbox.value@@'
+        },
+        {
+            key : 'label',
+            label : '@@form.selectbox.label@@'
+        },
+        {
+            key : 'grouping',
+            label : '@@form.selectbox.grouping@@'
+        }]
+    },
+    {
+        name : 'optionsBinder',
+        label : '@@form.selectbox.chooseOptionsBinder@@',
+        type : 'elementselect',
+        options_ajax : '[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.form.model.FormLoadOptionsBinder',
+        url : '[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions'
+    }]
+},
+{
+    title : '@@form.selectbox.advancedOptions@@',
+    properties : [{
+        label : '@@form.selectbox.data@@',
+        type : 'header'
+    },
+    {
+        name : 'value',
+        description : '@@form.selectbox.value.desc@@',
+        label : '@@form.selectbox.value@@',
+        type : 'textfield'
+    },
+    {
+        name : 'multiple',
+        label : '@@form.selectbox.multipleSelection@@',
+        type : 'checkbox',
+        value : 'False',
+        options : [{
+            value : 'true',
+            label : ''
+        }]
+    },
+    {
+        name : 'validator',
+        label : '@@form.selectbox.validator@@',
+        type : 'elementselect',
+        options_ajax : '[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.form.model.FormValidator',
+        url : '[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions'
+    },
+    {
+        label : '@@form.selectbox.dependency@@',
+        type : 'header'
+    },
+    {
+    	name : 'removeDuplicates',
+    	label : '@@form.selectbox.removeDuplicates@@',
+    	description : '@@form.selectbox.removeDuplicates.description@@',
+    	type : 'checkbox',
+    	value : 'false',
+    	options : [{
+    		value : 'true',
+    		label : ''
+    	}]
+    },
+    {
+        name : 'controlField',
+        label : '@@form.selectbox.controlField@@',
+        type : 'textfield'
+    },
+    {
+        label : '@@form.selectbox.ui@@',
+        type : 'header'
+    },
+    {
+        name : 'modernStyle',
+        label : '@@form.selectbox.modernStyle@@',
+        type : 'checkbox',
+        value : 'true',
+        options : [{
+            value : 'true',
+            label : ''
+        }]
+    },
+    {
+        name : 'size',
+        label : '@@form.selectbox.size@@',
+        type : 'textfield',
+        value : '20'
+    },
+    {
+        name : 'readonly',
+        label : '@@form.selectbox.readonly@@',
+        type : 'checkbox',
+        value : 'False',
+        options : [{
+            value : 'true',
+            label : ''
+        }]
+    },
+    {
+        name : 'readonlyLabel',
+        label : '@@form.selectbox.readonlyLabel@@',
+        type : 'checkbox',
+        value : 'False',
+        options : [{
+            value : 'true',
+            label : ''
+        }]
+    },
+    {
+        label : '@@form.selectbox.workflow@@',
+        type : 'header'
+    },
+    {
+        name : 'workflowVariable',
+        label : '@@form.selectbox.workflowVariable@@',
+        type : 'textfield'
+    }]
+}]
